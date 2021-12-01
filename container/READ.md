@@ -21,5 +21,7 @@
 
  ## Creare un'immagine del progetto su Docker Desktop
  Per poter creare un container dell'applicazione React js, è necessario inserire alcuni file all'interno della cartella del progetto per permettere il processo di creazione del container.
+ 
  Nello specifico dovranno essere inseriti un Dockerfile contenente le istruzioni necessarie a Docker Desktop per processare l'applicazione e un file .dockerignore che permette di installare aggiornamenti del progetto senza impiegare il tempo per installare alcuni file già presenti.
+ 
  Questi file possono essere scaricati dalla repository oppure creati da zero, inserendo poi il seguente codice:
