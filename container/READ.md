@@ -27,3 +27,18 @@
  Nello specifico dovranno essere inseriti un Dockerfile contenente le istruzioni necessarie a Docker Desktop per processare l'applicazione e un file .dockerignore che permette di installare aggiornamenti del progetto senza impiegare il tempo per installare alcuni file già presenti.
  
  Questi file possono essere scaricati dalla repository oppure creati da zero, inserendo poi il seguente codice:
+
+```
+FROM node:17-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+COPY package-lock.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
+```
