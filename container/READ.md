@@ -1,7 +1,7 @@
 
 # Container Applicazione React js
  ## Introduzione
- Questa guida ha il compito di creare un container Docker per l'applicazione React js contenuta nella cartella Front-end.
+ Questa guida ti permetterà di creare un container Docker per l'applicazione React js contenuta nella cartella Front-end del repository GitHub.
  
  Per proseguire è necessario avere installato Docker Desktop sulla propria macchina.
  
