@@ -1,7 +1,10 @@
 # Front-End: Applicazione React js
+  | Versione | Descrizione   | Redattore      |
+  | -------- | ------------- | -------------- |
+  | 1.0      | Prima release | Andrea Cinelli |
   ## Introduzione
-  Questa applicazione React js ha lo scopo di visualizzare due grafici, un istogramma e un grafico a torta, utilizzando i dati contenuti in un file json a cui vengono effetuate
-  le richieste di Rest.
+  Questa applicazione React js ha lo scopo di visualizzare due grafici, un istogramma e un grafico a torta, utilizzando i dati contenuti in un file json a cui vengono 
+  effetuate le richieste di Rest.
   Prima di passare al download dei file che compongono il progetto è necessario creare la directory che conterrà i file.
    ### Creazione app React js
    Per creare un'applicazione React js bisogna prima scegliere la directory in cui scaricare i file.
