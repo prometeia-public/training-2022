@@ -39,4 +39,4 @@
   ## Conclusione
   Una volta apportate le modifiche sarà necessario avviare nuovamente il server come riportato nel passo **Avvio del server** precedentemente affrontato in questo documento
   ed è perciò necessario riavviare anche l'applicazione come spiegato in **Avvio app**. Per controllare che le operazione siano avvenute con successo, scrivere nella barra di
-  ricerca del browser **http://localhost:*numero_porta*/data***, in questo modo sarà possibile controllare che i dati del file *db.json* siano stati caricati sul server.
+  ricerca del browser **http://localhost:*numero_porta*/data**, in questo modo sarà possibile controllare che i dati del file *db.json* siano stati caricati sul server.
