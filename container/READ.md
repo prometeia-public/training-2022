@@ -5,7 +5,7 @@
  
  Per proseguire è necessario avere installato Docker Desktop sulla propria macchina.
  
- È consigliato usare Visual Studio Code per implementare la soluzione indicata nella guida.
+ È consigliato usare Visual Studio Code per implementare la soluzione indicata nella guida, aggiungendo l'estensione Docker rilasciata da Microsoft.
  
  ## Scaricare e avviare l'applicazione React js
  Per maggiori informazioni sull'installazione dell'applicazione, consultare questa [guida](https://github.com/prometeia-public/training-2022/blob/main/Front-end/READ.md/).
@@ -30,24 +30,34 @@
  
  Dockerfile
 
-```
-FROM node:17-alpine
+ ```
+ FROM node:17-alpine
 
-WORKDIR /app
+ WORKDIR /app
 
-COPY package.json ./
-COPY package-lock.json ./
+ COPY package.json ./
+ COPY package-lock.json ./
 
-RUN npm install
+ RUN npm install
 
-COPY . .
+ COPY . .
 
-CMD ["npm", "start"]
-```
+ CMD ["npm", "start"]
+ ```
 
-.dockerignore
-```
-node_modules
-Dockerfile
-.git
-```
+ .dockerignore
+ ```
+ node_modules
+ Dockerfile
+ .git
+ ```
+
+ A questo punto aprendo Prompt dei comandi o Powershell (Windows) oppure Terminale (MacOS), entrando nella cartella contenente il Dockerfile, sarà possibile inserire il      comando *docker build -t (nome immagine) .* per costruire un'immagine Docker dell'applicazione React js
+
+ ## Eseguire il container Docker
+
+ A partire dall'immagine Docker creata, sarà possibile creare ed eseguire un container Docker che potrà essere esportato in altre macchine e sviluppato.
+
+ Una volta disponibile l'immagine dell'applicazione React js, il comando per eseguire il container Docker è *docker run -dp 3000:3000 (nome immagine*.
+
+ Questo comando eseguirà l'applicazione sulla porta 3000, una volta eseguita con successo sarà possibile accedere a *localhost:3000* per vedere l'applicazione in uso
