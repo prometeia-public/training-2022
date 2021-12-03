@@ -3,9 +3,10 @@ import React from 'react';
 import { BarChart,PieChart, Pie, Bar, XAxis, YAxis, ResponsiveContainer, Legend, Tooltip, CartesianGrid} from 'recharts';
 import {useState, useEffect} from 'react'
 
+
 //Fetch data
 const fetchData = async () => {
-  const res = await fetch('http://localhost:5000/data')
+  const res = await fetch('/data.json')
   const d = await res.json()
 
   return d
@@ -17,11 +18,12 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       const dataFromServer = await fetchData()
-      setData(dataFromServer)
+      setData(dataFromServer.data)
     }
 
     getData()
   }, [])
+
   return (
     <div style={{ width: '100%', height: 300}}>
     <ResponsiveContainer width="100%" aspect = {4}>
@@ -64,6 +66,8 @@ function App() {
   </div>
   );
 }
+
+//"server": "json-server --watch db.json --port 5000"
 
 export default App;
 
