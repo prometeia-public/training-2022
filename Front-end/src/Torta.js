@@ -1,24 +1,31 @@
-import {PieChart, Pie, ResponsiveContainer, Tooltip} from 'recharts';
+import {PieChart, Pie, ResponsiveContainer} from 'recharts';
 import React from 'react';
+import './App.css';
 
 const Torta = ({newdata}) => {
-    return(
-        <ResponsiveContainer width="100%" aspect={4}>
-        <PieChart>
+  return (
+    <div className="pieChart_bg">
+      <ResponsiveContainer width="100%">
+        <PieChart
+          margin={{
+            top: 10,
+            right: 30,
+            left: 30,
+            bottom: 5,
+          }}
+        >
           <Pie
             dataKey="rv"
             isAnimationActive={false}
             data={newdata}
-            cx={200}
-            cy={200}
-            outerRadius={80}
+            outerRadius="60%"
             fill="#8884d8"
             label
           />
-          <Tooltip />
         </PieChart>
       </ResponsiveContainer>
-    );
+    </div>
+  );
 }
 
 export default Torta

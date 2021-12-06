@@ -1,8 +1,10 @@
 import './App.css';
 import React from 'react';
-import { BarChart,PieChart, Pie, Bar, XAxis, YAxis, ResponsiveContainer, Legend, Tooltip, CartesianGrid} from 'recharts';
-import {useState, useEffect} from 'react'
-
+import {useState, useEffect} from 'react';
+import Istogramma from './Istogramma' ;
+import Torta from './Torta';
+import SideBar from './SideBar';
+import XData from './XData';
 
 //Fetch data
 const fetchData = async () => {
@@ -25,49 +27,19 @@ function App() {
   }, [])
 
   return (
-    <div style={{ width: '100%', height: 300}}>
-    <ResponsiveContainer width="100%" aspect = {4}>
-      <BarChart
-        width={300}
-        height={300}
-        data={newdata}
-        margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey = "name" label={{ value: 'Asse Orizzontale', angle: 0, position: 'insideTopRight', offset: 20 }} />
-      <YAxis label={{ value: 'Asse Verticale', angle: -90, position: 'insideLeft', offset: 20 }}/>
-      <Tooltip />
-      <Legend />
-      <Bar type="natural" dataKey="pv" stroke="#8884d8" strokeWidth="2" legendType="square" dot={{r:10, strokeWidth:8}}/>
-      <Bar type="natural" dataKey="uv" stroke="#82ca9d" strokeWidth="2" legendType="square"/>
-      <Bar type="natural" dataKey="rv" stroke="#26ab2a" strokeWidth="2" legendType="square"/>
-    </BarChart>
-  </ResponsiveContainer>
-  <ResponsiveContainer width="100%" aspect = {4}>
-    <PieChart>
-      <Pie
-        dataKey="rv"
-        isAnimationActive={false}
-        data={newdata}
-        cx={200}
-        cy={200}
-        outerRadius={80}
-        fill="#8884d8"
-        label
-      />
-      <Tooltip />
-    </PieChart>
-  </ResponsiveContainer>
-  </div>
+    <div style={{ width: '100%', height: '200%', backgroundColor: '#1a1e34'}}>
+      <div style={{color: '#FFFFFF', fontWeight: 'bold', fontSize: '150%', marginLeft: '2%', height: '5%'}}>Dashboard</div>
+      <SideBar />
+      <div style ={{display:"inline", float: 'right', width: '80%'}}>
+      <Istogramma newdata={newdata} />
+      <XData newdata = {newdata} />
+      </div>
+      <div style ={{display:"inline", float: 'right', width: '80%'}}>
+      <Torta newdata = {newdata} />
+      </div>
+    </div>
   );
 }
-
-//"server": "json-server --watch db.json --port 5000"
 
 export default App;
 
