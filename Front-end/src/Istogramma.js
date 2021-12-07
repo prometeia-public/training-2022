@@ -1,7 +1,7 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, Tooltip, CartesianGrid} from 'recharts';
 import React from 'react';
 
-const Istogramma = ({newdata}) => {
+const Istogramma = ({newdata, campi}) => {
     return (
         <div className="chart_bg" style={{ width: '70%'}}>
             <ResponsiveContainer width="100%" aspect={2}>
@@ -20,9 +20,9 @@ const Istogramma = ({newdata}) => {
                     <XAxis dataKey="name" label={{ value: 'X', angle: 0, position: 'insideTopRight', fill: '#FFFFFF' }} />
                     <YAxis label={{ value: 'Y', angle: 0, position: 'insideTopLeft', offset: -1, fill: '#FFFFFF' }} />
                     <Tooltip />
-                    <Bar type="natural" dataKey="pv" fill="#8884d8" stroke="#FFFFFF" strokeWidth="2" legendType="square" dot={{ r: 10, strokeWidth: 8 }} />
-                    <Bar type="natural" dataKey="uv" fill="#82ca9d" stroke="#FFFFFF" strokeWidth="2" legendType="square" />
-                    <Bar type="natural" dataKey="rv" fill="#26ab2a" stroke="#FFFFFF" strokeWidth="2" legendType="square" />
+                    {campi.map(campi => (
+                        <Bar type="natural" dataKey={campi} fill="#82ca9d" stroke="#FFFFFF" strokeWidth="2" legendType="square" />
+                    ))}
                     <Legend />
                 </BarChart>
             </ResponsiveContainer>
