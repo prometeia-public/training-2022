@@ -75,10 +75,11 @@ body{
   margin-top: 1%;
   margin-left: 1%;
   color: white;
-  position: absolute;
+  position: fixed;
   border: solid white 3px;
   border-radius: 25px 25px 25px 25px;
   overflow: auto;
+  top: 5%;
 }
 
 .menu_txt{
