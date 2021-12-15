@@ -6,9 +6,10 @@ import Torta from './Torta';
 import SideBar from './SideBar';
 import XData from './XData';
 
+///data.json
 //Fetch data
 const fetchData = async () => {
-  const res = await fetch('/data.json')
+  const res = await fetch('https://r9hotgirh2.execute-api.eu-west-1.amazonaws.com/default/REST_Poc')
   const d = await res.json()
 
   return d
@@ -26,7 +27,7 @@ function App() {
     getData()
   }, [])
 
-  const campi = ["pv", "uv", "rv"]
+  const campi = ["entrate", "entrate_correnti", "entrate_trasferimenti", "entrate_contributive", "altre_entrate_correnti", "entrate_conto_capitale", "alienazione_beni_patr", "entrate_trasferimenti_conto_cap", "riscossioni_crediti", "accensione_prestiti"]
   return (
     <div style={{ width: '100%', height: '200%', backgroundColor: '#1a1e34'}}>
       <div style={{color: '#FFFFFF', fontWeight: 'bold', fontSize: '150%', marginLeft: '2%', height: '5%', position: "fixed", width:"100%", backgroundColor: '#1a1e34'}}>Dashboard</div>
