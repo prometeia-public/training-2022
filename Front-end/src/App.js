@@ -27,7 +27,7 @@ function App() {
     getData()
   }, [])
 
-  const campi = ["entrate", "entrate_correnti", "entrate_trasferimenti", "entrate_contributive", "altre_entrate_correnti", "entrate_conto_capitale", "alienazione_beni_patr", "entrate_trasferimenti_conto_cap", "riscossioni_crediti", "accensione_prestiti"]
+  const campi = ["entrate", "entrate derivanti da trasferimenti correnti", "entrate contributive", "altre entrate correnti", "entrate derivanti da trasferimenti in conto capitale", "accensione di prestiti", "entrate correnti", "entrate in conto capitale", "alienazione di beni patrimoniali", "riscossioni di crediti"]
   return (
     <div style={{ width: '100%', height: '200%', backgroundColor: '#1a1e34'}}>
       <div style={{color: '#FFFFFF', fontWeight: 'bold', fontSize: '150%', marginLeft: '2%', height: '5%', position: "fixed", width:"100%", backgroundColor: '#1a1e34'}}>Dashboard</div>
